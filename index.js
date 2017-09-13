@@ -912,10 +912,12 @@ Session.prototype.onMsg = function (buffer, remote) {
 				req.responseCb (new ResponseInvalidError ("Version in request '"
 						+ req.message.version + "' does not match version in "
 						+ "response '" + message.version));
+			/* removed as NG type device not returning the correct value
 			} else if (message.community != req.message.community) {
 				req.responseCb (new ResponseInvalidError ("Community '"
 						+ req.message.community + "' in request does not match "
 						+ "community '" + message.community + "' in response"));
+			*/
 			} else if (message.pdu.type == PduType.GetResponse) {
 				req.onResponse (req, message);
 			} else {
